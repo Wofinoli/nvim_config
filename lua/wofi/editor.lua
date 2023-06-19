@@ -1,3 +1,6 @@
+-- Sets line numbers
+vim.opt.number = true
+
 -- Expands tabs to spaces
 vim.opt.expandtab = true
 
