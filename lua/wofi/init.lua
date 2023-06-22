@@ -1,4 +1,5 @@
 require("wofi.remap")
-require("wofi.packer")
+--require("wofi.packer")
+require("wofi.lazy")
 require("wofi.editor")
 require("wofi.statusline")
