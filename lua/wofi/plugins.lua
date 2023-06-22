@@ -33,4 +33,10 @@ return {
     require("lsp_lines").setup()
   end,
   },
+  {
+  'stevearc/oil.nvim',
+  opts = {},
+  -- Optional dependencies
+  dependencies = { "nvim-tree/nvim-web-devicons" },
+  }
 }
