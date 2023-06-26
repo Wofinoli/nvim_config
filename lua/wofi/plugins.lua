@@ -64,5 +64,19 @@ return {
     {'saadparwaiz1/cmp_luasnip'},
     {'rafamadriz/friendly-snippets'},
   }
-}
+  },
+  {'petertriho/nvim-scrollbar',
+  config = function()
+    require("scrollbar").setup()
+  end,
+  },
+  {
+  "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
+  }
 }
