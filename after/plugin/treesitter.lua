@@ -7,7 +7,7 @@ require'nvim-treesitter.configs'.setup {
 
   -- Automatically install missing parsers when entering buffer
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-  auto_install = true,
+  auto_install = false, --true,
 
   ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
   -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
@@ -26,12 +26,13 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
-local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-parser_config.org = {
-	install_info = {
-		url = 'https://github.com/milisims/tree-sitter-org',
-		revision = 'main',
-		files = { 'src/parser.c', 'src/scanner.cc' },
-	},
-	filetype = 'org',
+
+local parser_config = require 'nvim-treesitter.parsers'.get_parser_configs()
+require("nvim-treesitter.install").compilers = { "gcc-13" }
+parser_config.norg = {
+  install_info =
+    { url    = 'https://github.com/nvim-neorg/tree-sitter-norg'
+    , files  = { 'src/parser.c', 'src/scanner.cc' }
+    , branch = 'main'
+  }
 }
