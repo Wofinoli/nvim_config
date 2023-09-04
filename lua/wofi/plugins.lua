@@ -78,5 +78,10 @@ return {
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
     }
+  },
+  { 'Aasim-A/scrollEOF.nvim', name = 'scrollEOF',
+      config = function()
+        require('scrollEOF').setup()
+      end,
   }
 }
